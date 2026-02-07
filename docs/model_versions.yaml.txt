@@ -1,0 +1,33 @@
+project_name: Vanilla GAN for Offline Signature Augmentation
+
+models:
+  - version: VanillaGAN-Sig-v1.0
+    type: Generic Vanilla GAN
+    image_resolution: 64x64
+    latent_dimension: 100
+    dataset:
+      real_signatures: limited (10–20 samples)
+      synthetic_signatures: generated via GAN
+    training_details:
+      epochs: 100
+      batch_size: 32
+      optimizer: Adam
+      learning_rate: 0.0002
+    purpose:
+      - Learn distribution of offline handwritten signatures
+      - Generate synthetic genuine-like signatures
+      - Augment training data for verification models
+    evaluation_impact:
+      baseline_verification:
+        accuracy: 0.60
+        FAR: 0.40
+        FRR: 0.40
+        EER: approx 0.40
+      augmented_verification:
+        accuracy: 0.70
+        FAR: 0.20
+        FRR: 0.40
+        EER: approx 0.30
+    remarks:
+      - Synthetic data reduced false acceptance of forged signatures
+      - Demonstrates effectiveness of GAN-based data augmentation

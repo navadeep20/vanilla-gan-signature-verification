@@ -1,0 +1,34 @@
+# Future Work — Signature Generation & Verification System
+
+This project demonstrates the use of a Vanilla GAN for synthetic signature generation
+and its impact on reducing forgery acceptance in offline signature verification systems.
+
+The following improvements are planned as future extensions:
+
+## 1. Conditional GAN (CGAN)
+Instead of generating generic signatures, a Conditional GAN can be used to generate
+person-specific signatures by conditioning on user IDs or writer styles.
+This will significantly improve verification performance for multi-user systems.
+
+## 2. Higher Resolution Signatures
+Current signatures are generated at 64×64 resolution.
+Future versions can generate 128×128 or 256×256 images to capture finer stroke details,
+which is important for forensic-level verification.
+
+## 3. Advanced GAN Architectures
+Replacing Vanilla GAN with DCGAN or StyleGAN variants can improve image quality,
+reduce noise, and stabilize training.
+
+## 4. Improved Verification Models
+Using Siamese Networks with contrastive or triplet loss can better capture similarity
+between genuine and forged signatures compared to simple binary classifiers.
+
+## 5. Real-World Dataset Integration
+Future work includes training and evaluation on standard datasets such as
+GPDS, CEDAR, or MCYT to benchmark against academic literature.
+
+## 6. Deployment in Production Systems
+The system can be integrated into banking or e-governance pipelines with:
+- REST APIs for signature verification
+- Continuous monitoring of FAR/FRR
+- Periodic retraining using newly collected signatures
